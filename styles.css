@@ -1,0 +1,280 @@
+:root {
+  --bg: #06040f;
+  --bg2: #1d0932;
+  --accent: #ffb300;
+  --accent-2: #ff3d81;
+  --text: #f7f7ff;
+  --muted: #bdc0d8;
+  --panel: rgba(22, 15, 44, 0.75);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 20%, #42207d 0%, var(--bg) 35%),
+    linear-gradient(120deg, var(--bg), var(--bg2));
+  min-height: 100vh;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.15;
+}
+
+.hero {
+  padding: 2rem clamp(1rem, 2vw, 3rem) 3rem;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  letter-spacing: 0.2rem;
+  font-weight: 700;
+}
+
+.cta-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.hero-grid {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.4rem;
+  align-items: stretch;
+  grid-template-columns: 1.05fr 0.95fr;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.hero-visual {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  min-height: 360px;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8) saturate(1.1);
+}
+
+.visual-badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background: rgba(10, 7, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 0.75rem 1rem;
+  border-radius: 0.7rem;
+  font-weight: 700;
+}
+
+.eyebrow,
+.section-kicker {
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0.5rem 0;
+}
+
+h1 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 700px;
+}
+
+.hero-actions,
+.ticket-tags {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin: 1.2rem 0;
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.8rem 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn.small {
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), #ffd56a);
+  color: #1a1233;
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #6826cb, var(--accent-2));
+  color: #fff;
+}
+
+.stats {
+  margin-top: 1.2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.stats article,
+.panel,
+.qr-card,
+.poster-card,
+.video-frame {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--panel);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+}
+
+.stats article {
+  padding: 1rem;
+}
+
+.stats h3 {
+  color: var(--accent);
+  font-size: 1.6rem;
+}
+
+.panel {
+  margin: 1.2rem clamp(1rem, 2vw, 3rem);
+  padding: 1.5rem;
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.video-frame {
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.video-frame iframe {
+  width: 100%;
+  min-height: 300px;
+  border: 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.promo {
+  color: var(--accent);
+  text-shadow: 0 0 20px rgba(255, 179, 0, 0.45);
+}
+
+ul {
+  color: var(--muted);
+  line-height: 1.8;
+  padding-left: 1.2rem;
+}
+
+.feedback {
+  min-height: 1.2rem;
+  color: #8fffd6;
+  font-size: 0.95rem;
+}
+
+.poster-card,
+.qr-card {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 1.2rem;
+  min-height: 240px;
+}
+
+.poster-card {
+  background: linear-gradient(160deg, rgba(255, 179, 0, 0.25), rgba(104, 38, 203, 0.35));
+}
+
+.release-date {
+  font-family: "Cinzel", serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.12rem;
+}
+
+.qr-card img {
+  width: min(260px, 90%);
+  border-radius: 0.7rem;
+  border: 8px solid #fff;
+  margin: 0 auto 1rem;
+}
+
+.ticket-tags span {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 0.45rem 0.7rem;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+}
+
+@media (max-width: 940px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
